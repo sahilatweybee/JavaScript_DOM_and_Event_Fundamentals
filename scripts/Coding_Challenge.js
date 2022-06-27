@@ -1,12 +1,12 @@
-var secretNo = Math.trunc(Math.random() * 20) + 1;
+var secretNo = Math.trunc(Math.random() * 21);
 var score = 20;
 var highscore = 0;
 
 const displayMessage = function (message) {
-    document.querySelector('.message').textContent = message;
+    document.getElementsByClassName('message').textContent = message;
 };
 
-document.querySelector('#check').addEventListener('click', function () {
+document.getElementById('check').addEventListener('click', function () {
     var currentGuess = Number(document.getElementById('currentGuessed-no').value);
     
     if (!currentGuess) {
@@ -37,7 +37,7 @@ document.querySelector('#check').addEventListener('click', function () {
     }
 });
 
-document.querySelector('.again').addEventListener('click', function () {
+document.getElementById('again').addEventListener('click', function () {
     score = 20;
     secretNo = Math.trunc(Math.random() * 20) + 1;
 
