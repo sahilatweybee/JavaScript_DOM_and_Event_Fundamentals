@@ -17,7 +17,6 @@ document.querySelector('#check').addEventListener('click', function () {
     } else if (currentGuess === secretNo) {
         displayMessage('Correct Number!');
         document.getElementById('num').textContent = secretNo;
-        score++;
         document.body.style.backgroundColor = '#60b347';
         document.getElementById('num').style.width = '30rem';
 
