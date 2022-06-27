@@ -28,11 +28,11 @@ document.querySelector('#check').addEventListener('click', function () {
         if (score > 1) {
             displayMessage(currentGuess > secretNo ? 'Too high!' : 'Too low!');
             score--;
-            document.querySelector('.score').textContent = score;
+            document.getElementsByClassName('score').textContent = score;
         } else {
             highscore = score;
             displayMessage('You lost the game!');
-            document.querySelector('.score').textContent = 0;
+            document.getElementsByClassName('score').textContent = 0;
         }
     }
 });
@@ -44,7 +44,7 @@ document.querySelector('.again').addEventListener('click', function () {
     displayMessage('Start Guessing...');
     document.getElementsByClassName('score').textContent = score;
     document.getElementById('num').textContent = '?';
-    document.querySelector('.currentGuess').value = '';
+    currentGuess = '';
 
     document.body.style.backgroundColor = '#222';
     document.getElementById('num').style.width = '15rem';
