@@ -6,8 +6,6 @@ const displayMessage = function (message) {
     document.querySelector('.message').textContent = message;
 };
 
-document.getElementById('num').textContent = secretNo;
-
 document.querySelector('#check').addEventListener('click', function () {
     var currentGuess = Number(document.getElementById('currentGuessed-no').value);
     
@@ -45,7 +43,7 @@ document.querySelector('.again').addEventListener('click', function () {
 
     displayMessage('Start Guessing...');
     document.getElementsByClassName('score').textContent = score;
-    document.getElementById('num').textContent = secretNo;
+    document.getElementById('num').textContent = '?';
     document.querySelector('.currentGuess').value = '';
 
     document.body.style.backgroundColor = '#222';
