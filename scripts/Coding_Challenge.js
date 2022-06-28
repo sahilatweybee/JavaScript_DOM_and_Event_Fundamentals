@@ -12,7 +12,7 @@ document.querySelector('.check').addEventListener('click', function () {
     var currentGuess = Number(document.querySelector('.currentGuess').value);
     
     if (!currentGuess) {
-        displayMessage('Not a umber!');
+        displayMessage('Not a Number!');
         // When player wins
     } else if (currentGuess === secretNo) {
         displayMessage('Correct Number!');
@@ -27,20 +27,19 @@ document.querySelector('.check').addEventListener('click', function () {
 
         // When currentGuess is wrong
     } else if (currentGuess !== secretNo) {
-        if (score > 1) {
+        if (score >= 1) {
             displayMessage(currentGuess > secretNo ? 'Too high!' : 'Too low!');
             score--;
-            document.querySelector('score').textContent = score;
+            document.querySelector('.score').textContent = score;
         } else {
             highscore = score;
             displayMessage('You lost the game!');
-            document.querySelector('score').textContent = 0;
+            document.querySelector('.score').textContent = 0;
         }
     }
 });
 
 document.querySelector('.again').addEventListener('click', function () {
-    score = 20;
     secretNo = Math.trunc(Math.random() * 20) + 1;
 
     displayMessage('Start Guessing...');
