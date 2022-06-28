@@ -34,28 +34,24 @@ const checkChoice = function () {
         document.querySelector('.number').textContent = secretNo;
         document.body.style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '30rem';
-
         if (score > highscore) {
             highscore = score;
             document.querySelector('.highscore').textContent = highscore;
+        }
+        
 
-
-            // When currentGuess is wrong
-        } else if (currentGuess !== secretNo) {
-            if (score >= 1) {
-                displayMessage(currentGuess > secretNo ? 'Too high!' : 'Too low!');
-                score--;
-                document.querySelector('.score').textContent = score;
-            } else {
-                highscore = score;
-                displayMessage('You lost the game!');
-                document.querySelector('.score').textContent = 0;
-            }
+        // When currentGuess is wrong
+    } else if (currentGuess !== secretNo) {
+        if (score >= 1) {
+            displayMessage(currentGuess > secretNo ? 'Too high!' : 'Too low!');
+            score--;
+            document.querySelector('.score').textContent = score;
+        } else {
+            highscore = score;
+            displayMessage('You lost the game!');
+            document.querySelector('.score').textContent = 0;
         }
     }
 }
-document.querySelector('.checkChoice').addEventListener('click', function () {
-    checkChoice();
-    if (currentGuess === secretNo) { document.querySelector('#check').classList.remove('check'); }
-});
+document.querySelector('.check').addEventListener('click', checkChoice);
 document.querySelector('.again').addEventListener('click', playAgain);
